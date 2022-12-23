@@ -1,0 +1,38 @@
+<table>
+    <thead>
+        PROMENA PODATAKA POLJOPRIVREDNIKA
+    </thead>
+    <tr>
+        <td> <input type="text" placeholder="{{farmer.name}}" [(ngModel)]="name"></td>
+    </tr>
+    <small> *ime </small>
+    <tr>
+        <td> <input type="text" placeholder="{{farmer.lastname}}" [(ngModel)]="lastname">
+    </td>
+    </tr>        <small> *prezime </small> 
+    <tr>
+        <td> <input type="text" placeholder="{{farmer.username}}" [(ngModel)]="username">
+          </td>
+    </tr>   <small> *korisničko ime </small>
+    <tr>
+        <td> <input type="text" placeholder="{{farmer.mail}}" [(ngModel)]="mail">
+            </td>
+    </tr><small> *mail </small> 
+    <tr>
+        <td> <input type="date" placeholder="{{farmer.dateOfBirth}}" [(ngModel)]="dateOfBirth">
+             </td>
+    </tr><small> *datum rođenja </small>
+    <tr>
+        <td> <input type="text" placeholder="{{farmer.cityOfBirth}}" [(ngModel)]="cityOfBirth">
+             </td>
+    </tr><small> *mesto rođenja </small>
+    <tr>
+        <td> <input type="text" placeholder="{{farmer.phone}}" [(ngModel)]="phone">
+            </td>
+    </tr> <small> *telefon </small>
+    <br/>
+      <tr>
+        <td> <button class="btn btn-success" (click)="promena()"> PROMENI </button> </td>
+    </tr>
+</table>
+

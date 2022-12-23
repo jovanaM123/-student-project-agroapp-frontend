@@ -1,0 +1,57 @@
+<app-pred-meni></app-pred-meni>
+
+<div class="container">
+    <h3> Sve vaši proizvodi </h3>
+    <div class="dodavanje">
+        Želite da dodate proizvod? <a routerLink="/dodajProizv"> Dodaj proizvod </a>
+    </div>
+    <table *ngIf="proizvodi.length>0">
+        <thead>
+        <tr class="table100-head">
+            <th class="column1">
+                Šifra proizvoda
+            </th>
+            <th class="column2">
+                Naziv
+            </th>
+            <th class="column3">
+                Tip proizvoda
+            </th>
+            <th class="column4">
+                Količina
+            </th>
+          <th class="column5">
+            Detalji
+        </th>
+          <th class="column6">
+            Izbriši
+        </th>
+        </tr>
+    </thead>
+        <tr *ngFor="let proizvod of proizvodi">
+          <td class="column1">
+            {{ proizvod.codePr }}
+            </td>
+                <td class="column2">
+                    {{ proizvod.name }}
+                </td>
+                <td class="column3">
+                    {{ proizvod.type }}
+                </td>
+                <td class="column4">
+                    {{ proizvod.amount }}
+                </td>
+              <td class="column5">
+                <a routerLink="/detalji/{{proizvod.codePr}}">
+                    <img src="../../../assets/slike/update2.png" width="15px" height="15px">
+                </a>
+            </td>
+              <td class="column6">
+                <img src="../../../assets/slike/ne.png" width="15px" height="15px" (click)="izbrisi(proizvod.codePr)">
+            </td>
+        </tr>
+    </table>
+    <div *ngIf="proizvodi.length==0">
+        TRENUTNO NEMATE NITI JEDAN PROIZVOD
+    </div>
+    </div>

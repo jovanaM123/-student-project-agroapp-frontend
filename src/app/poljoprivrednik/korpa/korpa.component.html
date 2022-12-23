@@ -1,0 +1,19 @@
+<app-polj-meni></app-polj-meni>
+
+<div class="container">
+  <h3> Korpa </h3>
+  <mat-list role="list" class="lista" *ngFor="let sadnica of sadnice">
+    <mat-list-item role="listitem"> <b>{{sadnica.name}}, {{sadnica.owner}}</b> | 
+      <select name="rasadnik" [(ngModel)]="rasadnik">
+        <option disabled> Izaberite rasadnik za koji kupujete </option>
+        <option *ngFor="let ras of rasadnici" value="{{ras.name}}">{{ras.name}}</option>
+    </select>
+      <input type="text" placeholder="unesite kolicinu koju zelite da kupite" [(ngModel)]="kolicina"> 
+      <button style="margin-left: 20px;" class="btn btn-success" (click)="kupi(sadnica.codePr)"> KUPI </button>
+      <a (click)="obrisi(sadnica.codePr)">
+        <img src="../../../assets/slike/ne.png" style="margin-left: 20px;" width="15px" height="15px">
+      </a>
+    </mat-list-item>
+  </mat-list>
+</div>
+<app-poruka></app-poruka>

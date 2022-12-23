@@ -1,0 +1,59 @@
+<app-polj-meni></app-polj-meni>
+
+<div class="container">
+  <h3> Svi vaši rasadnici </h3>
+    <div class="dodavanje">
+        Želite da dodate rasadnik? <a routerLink="/dodajRasadnik"> Dodaj rasadnik </a>
+    </div>
+  <table *ngIf="rasadnici.length>0">
+      <thead>
+      <tr class="table100-head">
+          <th class="column1">
+              Naziv
+          </th>
+          <th class="column2">
+              Mesto
+          </th>
+          <th class="column3">
+              Broj sadnica
+          </th>
+          <th class="column4">
+              Slobodna mesta
+          </th>
+          <th class="column5">
+              Količina vode
+          </th>
+          <th class="column6">
+              Temperatura
+          </th>
+      </tr>
+  </thead>
+      <tr *ngFor="let rasadnik of rasadnici">
+        <td class="column1">
+            <a routerLink="/dashb/{{rasadnik.name}}">
+               {{ rasadnik.name }}
+            </a>
+
+          </td>
+              <td class="column2">
+                  {{ rasadnik.place }}
+              </td>
+              <td class="column3">
+                  {{ rasadnik.sadn }}
+              </td>
+              <td class="column4">
+                  {{ rasadnik.totalSadn }}
+              </td>
+              <td class="column5">
+                  {{ rasadnik.h20 }}
+              </td>
+              <td class="column6">
+                  {{ rasadnik.temp }}
+              </td>
+      </tr>
+  </table>
+  <div *ngIf="rasadnici.length==0">
+      TRENUTNO NEMATE NITI JEDNAN RASADNIK
+  </div>
+  </div>
+  <app-poruka></app-poruka>

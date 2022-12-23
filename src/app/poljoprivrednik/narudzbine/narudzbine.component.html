@@ -1,0 +1,72 @@
+<app-polj-meni></app-polj-meni>
+
+
+
+<div class="container">
+    <h3> Sve vaše narudžbine </h3>
+       <div class="form-group">
+        <input type="text" class="form-control" placeholder="Pretraga.." [(ngModel)]="filter">
+    </div>
+    <div class="sortiranje">
+        Sortiraj po: 
+        <button class="btn btn-info" (click)="sortNaziv()"> Nazivu </button>
+        <button class="btn btn-info" (click)="sortPr()"> Proizvođaču </button>
+        <button class="btn btn-info" (click)="sortKol()"> Količini </button>
+        </div>
+    <table *ngIf="narudzbine.length>0">
+        <thead>
+        <tr class="table100-head">
+            <th class="column1">
+                Šifra proizvoda
+            </th>
+            <th class="column2">
+                Naziv
+            </th>
+            <th class="column3">
+                Proizvođač
+            </th>
+            <th class="column4">
+                Tip proizvoda
+            </th>
+            <th class="column5">
+                Količina
+            </th>
+            <th class="column6">
+                Rasadnik
+            </th>
+           <th class="column7">
+                Obustavi narudžbinu
+            </th>
+        </tr>
+    </thead>
+        <tr *ngFor="let narudzbina of narudzbine | filter:filter">
+          <td class="column1">
+            {{ narudzbina.codeOfProd }}
+            </td>
+                <td class="column2">
+                    {{ narudzbina.name }}
+                </td>
+                <td class="column3">
+                    {{ narudzbina.company }}
+                </td>
+                <td class="column4">
+                    {{ narudzbina.type }}
+                </td>
+                <td class="column5">
+                    {{ narudzbina.amount }}
+                </td>
+                <td class="column6">
+                    {{ narudzbina.garden }}
+                </td>
+                <td class="column7">
+                   <img src="../../../assets/slike/ne.png" 
+                        style="width: 15px; height: 15px;"
+                        (click)="obrisi(narudzbina.codeOfProd)">
+                </td>
+        </tr>
+    </table>
+    <div *ngIf="narudzbine.length==0">
+        TRENUTNO NEMATE NITI JEDNAN PROIZVOD
+    </div>
+    </div>
+    <app-poruka></app-poruka>

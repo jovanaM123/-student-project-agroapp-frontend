@@ -1,0 +1,24 @@
+<app-polj-meni></app-polj-meni>
+<table>
+    <thead>
+        DODAVANJE RASADNIKA
+    </thead>
+    <tr>
+        <td> <input type="text" placeholder="Naziv" [(ngModel)]="name"> </td>
+    </tr>
+    <tr>
+        <td> <input type="text" placeholder="Mesto" [(ngModel)]="place"> </td>
+    </tr>
+    <tr>
+        <td> <input type="text" placeholder="Širina rasadnika" [(ngModel)]="sirina"> </td>
+    </tr>
+    <tr>
+        <td> <input type="text" placeholder="Dužina rasadnika" [(ngModel)]="duzina"> </td>
+    </tr>
+    <br/>
+      <tr>
+        <td> <button class="btn btn-success" (click)="dodaj()"> DODAJ </button> </td>
+    </tr>
+</table>
+
+<app-poruka></app-poruka>

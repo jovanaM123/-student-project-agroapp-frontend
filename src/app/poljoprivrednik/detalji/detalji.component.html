@@ -1,0 +1,63 @@
+<app-polj-meni></app-polj-meni>
+
+<div class="container">
+    <h3> Detalji o proizvodu </h3>
+    
+    <p style="float: left !important; margin-top: 20px;">
+        Srednja ocena ovog proizvoda je {{ocena}}
+    </p>
+    <p *ngIf="mozeO"
+    style="width: 120px; margin-top: 20px; padding: 10px;">
+    <select class="browser-default custom-select" [(ngModel)]="currentRate">
+      <option selected disabled>Ocena</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+    <button class="btn btn-warning" style="margin-top: 10px;" (click)="dodajOcenu()"> OCENI </button>
+    </p>
+<br/>
+<p style="width: 120px; margin-top: 40px; margin-bottom: 20px;">
+  <ngb-alert>
+      Ocene:
+  </ngb-alert>
+</p>
+
+  <ngb-toast *ngFor="let oc of ocene">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"></svg>
+        <strong class="mx-1"> @{{ oc.user }}: </strong>
+      {{oc.rate}}
+    </ngb-toast>
+
+<p style="width: 350px;" *ngIf="ocene.length==0">
+Trenutno, ne postoje ocene za ovaj proizvod.
+</p>
+
+
+<p style="width: 120px; margin-top: 40px; margin-bottom: 20px;">
+    <ngb-alert>
+        Komentari:
+    </ngb-alert>
+  </p>
+
+    <ngb-toast *ngFor="let komentar of komentari">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"></svg>
+          <strong class="mx-1"> @{{ komentar.user }}: </strong>
+        {{komentar.comment}}
+      </ngb-toast>
+
+<p style="width: 350px;" *ngIf="komentari.length==0">
+  Trenutno, ne postoje komentari za ovaj proizvod.
+</p>
+<p *ngIf="mozeK"
+style="width: 120px; margin-top: 20px; padding: 10px;">
+
+    <input type="text" [(ngModel)]="kom">
+    <button class="btn btn-warning" (click)="dodajKom()"> KOMENTARISI </button>
+
+</p>
+
+</div>
+<app-poruka></app-poruka>

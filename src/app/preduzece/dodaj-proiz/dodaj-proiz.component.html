@@ -1,0 +1,50 @@
+<app-pred-meni></app-pred-meni>
+
+<div class="container">
+<h3> Dodavanje proizvoda </h3>
+      <mat-vertical-stepper #stepper>
+        <mat-step [stepControl]="firstFormGroup">
+          <form>
+            <ng-template matStepLabel>1. korak </ng-template>
+            <input class="input--style-1" type="text" placeholder="Jedinstevna sifra" [(ngModel)]="sifra" [ngModelOptions]="{standalone: true}">
+            <input class="input--style-1" type="text" placeholder="Ime" [(ngModel)]="ime" [ngModelOptions]="{standalone: true}"> 
+            <input class="input--style-1" type="text" placeholder="Opis" [(ngModel)]="opis" [ngModelOptions]="{standalone: true}"> 
+            <div>
+              <button mat-button matStepperNext>Dalje</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup">
+        <form>
+          <ng-template matStepLabel>2. korak </ng-template>
+          <input class="input--style-1" type="text" placeholder="Kolicina" [(ngModel)]="kol" [ngModelOptions]="{standalone: true}">
+          <input class="input--style-1" type="text" placeholder="Cena" [(ngModel)]="cena" [ngModelOptions]="{standalone: true}">
+          <select name="tip" [(ngModel)]="tip" [ngModelOptions]="{standalone: true}">
+            <option value="" disabled selected>Tip</option>
+            <option value="sadnica">sadnica</option>
+            <option value="preparat">preparat</option>
+        </select>
+        <select name="nesme" [(ngModel)]="nesme" [ngModelOptions]="{standalone: true}">
+          <option value="" disabled selected>Izaberite ukoliko proizvod ne sme da bude pored neke sadnice</option>
+          <option *ngFor="let pr of proizvodi" value="{{pr.name}}">{{pr.name}}</option>
+      </select>
+          <div>
+              <button mat-button matStepperPrevious>Prethodno</button>
+              <button mat-button matStepperNext>Dalje</button>
+            </div>
+          </form>
+        </mat-step>
+
+        <mat-step>
+          <ng-template matStepLabel>Kraj</ng-template>
+          <p>Kraj.</p>
+          <div>
+            <button mat-button matStepperPrevious>Prethodno</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+            <button mat-button (click)="dodaj()">Dodaj</button>
+          </div>
+        </mat-step>
+      </mat-vertical-stepper>
+      
+</div>
+

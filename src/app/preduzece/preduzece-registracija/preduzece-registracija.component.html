@@ -1,0 +1,39 @@
+<table>
+    <thead>
+        REGISTRACIJA
+    </thead>
+    <tr>
+        <td> <input type="text" placeholder="Ime" [(ngModel)]="name"> </td>
+    </tr>
+    <tr>
+        <td> <input type="text" placeholder="Korisničko ime" [(ngModel)]="username"> </td>
+    </tr>
+    <tr>
+        <td> <input type="text" placeholder="Email" [(ngModel)]="mail"> </td>
+    </tr>
+    <tr>
+        <td> <input type="text" placeholder="Šifra" [(ngModel)]="password1"></td>
+    </tr>
+    <span style="font-size: xx-small;"> * Šifra mora imati minimalno 7 karaktera i počinjati slovom,
+         od toga bar jedno veliko slovo, jedan broj i jedan specijalni karakter.
+    </span>
+    <tr>
+        <td> <input type="text" placeholder="Unesite ponovo šifru" [(ngModel)]="password2"> </td>
+    </tr>
+    <tr>
+        <td> <input type="date" placeholder="Datum osnivanja" [(ngModel)]="date"> </td>
+    </tr>
+    <tr>
+        <td> <input type="text" placeholder="Mesto osnivanja" [(ngModel)]="city"> </td>
+    </tr>
+    <br/>
+        <re-captcha
+          (resolved)="resolved($event)"
+          siteKey="6LfZ2-0UAAAAALpOYAQSO6ufhcFSQEQtvjluwyy7"
+          style="display: flex;
+          justify-content: center;"
+        ></re-captcha>
+      <tr>
+        <td> <button class="btn btn-success" (click)="registracija()"> REGISTRUJTE SE </button> </td>
+    </tr>
+</table>

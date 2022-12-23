@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="sidebar">
+             <a routerLink="/dashb/{{name}}">Vrati se</a>
+      </div>
+      
+      <div class="content">
+          <h2> Dodajte preparat koji zelite </h2>
+            <ul>
+                <li>
+                    {{sadnica.name}}
+                    <select name="preparat" [(ngModel)]="prep" >
+                        <option disabled selected> Preparat </option>
+                        <option *ngFor="let preparat of preparati"
+                         value="preparat.name"> {{preparat.name}} </option>
+                    </select>
+                    <button class="btn btn-info" (click)="dodaj(sadnica.sadnica)"> DODAJ </button>
+                </li>
+            </ul>
+        </div>
+    
+    </div>

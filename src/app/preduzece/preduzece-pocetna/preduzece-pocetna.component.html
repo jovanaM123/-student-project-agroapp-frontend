@@ -1,0 +1,75 @@
+<app-pred-meni></app-pred-meni>
+
+<div class="container">
+    <h3> Sve vaše narudžbine </h3>
+    <button class="btn btn-info" (click)="sortirajOpadajuce()"> Sortiraj &darr;</button>
+    <button class="btn btn-info" (click)="sortirajRastuce()"> Sortiraj &uarr; </button>
+    <table *ngIf="narudzbine.length>0">
+        <thead>
+        <tr class="table100-head">
+            <th class="column1">
+                Šifra proizvoda
+            </th>
+            <th class="column2">
+                Naziv
+            </th>
+            <th class="column3">
+                Tip proizvoda
+            </th>
+            <th class="column4">
+                Količina
+            </th>
+            <th class="column5">
+                Naručilac
+            </th>
+            <th class="column6">
+                Rasadnik
+            </th>
+            <th class="column7">
+              Prihvati
+          </th>
+          <th class="column8">
+            Odbij
+        </th>
+        </tr>
+    </thead>
+    <tr *ngIf="false">
+        <td>
+            moze
+        </td>
+    </tr>
+        <tr *ngFor="let narudzbina of narudzbine"
+            class="{{narudzbina.codeOfProd}}"
+        >
+          <td class="column1">
+            {{ narudzbina.codeOfProd }}
+            </td>
+                <td class="column2">
+                    {{ narudzbina.name }}
+                </td>
+                <td class="column3">
+                    {{ narudzbina.type }}
+                </td>
+                <td class="column4">
+                    {{ narudzbina.amount }}
+                </td>
+                <td class="column5">
+                    {{ narudzbina.owner}}
+                </td>
+                <td class="column6">
+                    {{ narudzbina.garden}}
+                </td>
+                <td class="column7">
+                 <img src="../../../assets/slike/da.png" width="15px" height="15px" (click)="prihvati(narudzbina.codeOfProd, narudzbina.garden, narudzbina.owner, narudzbina.amount)">
+              </td>
+              <td class="column8">
+                <img src="../../../assets/slike/ne.png" width="15px" height="15px"
+                 (click)="odbij(narudzbina.codeOfProd, narudzbina.amount, narudzbina.owner)">
+            </td>
+        </tr>
+    </table>
+    <div *ngIf="narudzbine.length==0">
+        TRENUTNO NEMATE NITI JEDNU NARUDŽBINU
+    </div>
+    </div>
+

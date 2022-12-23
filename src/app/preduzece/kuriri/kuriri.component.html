@@ -1,0 +1,12 @@
+<app-pred-meni></app-pred-meni>
+
+<div class="container">
+    <h3> Izaberite kurira: </h3>
+
+    <ul *ngFor="let kurir of kuriri">
+        <li>
+            {{kurir.name}}
+            <button class="btn btn-primary" (click)="salji(kurir.name)"> ŠALJI </button>
+        </li>
+    </ul>
+</div>

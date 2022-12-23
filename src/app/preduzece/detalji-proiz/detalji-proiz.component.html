@@ -1,0 +1,28 @@
+<app-pred-meni></app-pred-meni>
+
+<div class="container">
+    <h3> Detalji o proizvodu </h3>
+    
+    <p style="float: left !important; margin-top: 20px;">
+        Srednja ocena ovog proizvoda je {{ocena}}
+    </p>
+<br/>
+
+<p style="width: 120px; margin-top: 40px; margin-bottom: 20px;">
+    <ngb-alert>
+        Komentari:
+    </ngb-alert>
+  </p>
+
+    <ngb-toast *ngFor="let komentar of komentari">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"></svg>
+          <strong class="mx-1"> @{{ komentar.user }}: </strong>
+        {{komentar.comment}}
+      </ngb-toast>
+
+<p style="width: 350px;" *ngIf="komentari.length==0">
+  Trenutno, ne postoje komentari za ovaj proizvod.
+</p>
+
+</div>
+

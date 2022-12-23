@@ -1,0 +1,22 @@
+<table>
+    <thead>
+        PROMENA ŠIFRE
+    </thead>
+    <tr>
+        <td> <input type="text" placeholder="Unesite staru šifru" [(ngModel)]="passwordold"> </td>
+        </tr>
+    <tr>
+    <tr>
+        <td> <input type="text" placeholder="Šifra" [(ngModel)]="password1"> </td>
+    </tr>
+    <span style="font-size: xx-small;"> * Šifra mora imati minimalno 7 karaktera i počinjati slovom,
+        od toga bar jedno veliko slovo, jedan broj i jedan specijalni karakter.
+   </span>
+    <tr>
+        <td> <input type="text" placeholder="Unesite ponovo šifru" [(ngModel)]="password2"> </td>
+        </tr>
+    <tr>
+        <td> <button class="btn btn-success" (click)="promena()"> PROMENA </button> </td>
+    </tr>
+    <br/>
+</table>

@@ -1,0 +1,51 @@
+<app-polj-meni></app-polj-meni>
+
+<div class="container">
+  <a routerLink="/korpa"> 
+    <img src="../../../assets/slike/korpa.png" width="40px" height="40px" style="margin-bottom: 20px;"> 
+  </a> 
+<mat-grid-list cols="3" rowHeight="1:1">
+  <div *ngFor="let sadnica of sadnice">
+    <mat-grid-tile>
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{sadnica.name}}</mat-card-title>
+          <mat-card-subtitle>{{sadnica.owner}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content style="display: inline-block; text-align: left;">
+          <div style="display: inline-grid; margin-right: 10px;"> 
+          <span *ngIf="sadnica.amount !== '0'" style="color: green;"> *ima na stanju* </span>
+          <span *ngIf="sadnica.amount === '0'" style="color: rebeccapurple;"> *nema na stanju* </span>
+            <span style="font-size: 20px; font-weight: bolder;
+             margin-right: 20px; color:crimson"> {{sadnica.price}} rsd</span>
+             </div>
+            <button *ngIf="sadnica.amount !== '0'" class="btn btn-lg btn-warning" style="margin-right: 10px;" (click)="open(sadnica)">Kupi</button>
+            <a routerLink="/detaljiPr/{{sadnica.codePr}}">
+              <img src="../../../assets/slike/like.png" width="60px" height="50px"> 
+            </a> 
+        </mat-card-content>
+        <mat-card-actions>
+          <mat-accordion>
+            <mat-expansion-panel (opened)="panelOpenState1 = true"
+                                 (closed)="panelOpenState1 = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  O proizvodu
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <p>{{sadnica.description}}</p>
+            </mat-expansion-panel>
+          </mat-accordion>
+     </mat-card-actions>
+      </mat-card>
+      
+    </mat-grid-tile>
+  </div>
+</mat-grid-list>
+
+
+
+</div>
+
+<app-poruka></app-poruka>

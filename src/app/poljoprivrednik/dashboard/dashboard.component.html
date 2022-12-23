@@ -1,0 +1,77 @@
+<div class="container">
+<div class="sidebar">
+    <p style="background-color: darkkhaki;">Temeratura</p>
+    <div class="dodavanje">
+    <a>
+        <img src="../../../assets/slike/plus.png" (click)="dodajT(rasadnik.temp)" width="20px" height="20px">
+    </a>
+    <a>
+        <img src="../../../assets/slike/minus.png" (click)="oduzmiT(rasadnik.temp)" width="20px" height="20px">
+    </a>
+    </div>
+
+    <p style="background-color: darkkhaki;">Voda</p>
+    <div class="dodavanje">
+    <a>
+        <img src="../../../assets/slike/plus.png" (click)="dodajH20(rasadnik.h20)" width="20px" height="20px">
+    </a>
+    <a>
+        <img src="../../../assets/slike/minus.png" (click)="oduzmiH20(rasadnik.h20)" width="20px" height="20px">
+    </a>
+    </div>
+    <a class="active" routerLink="/poljPocetna">Vrati se</a>
+  </div>
+  
+  <div class="content">
+      <div class="info">
+        <div class="card" style="width: 18rem; margin-right: 20px;">
+                <div class="card-body">
+                <h3 class="card-title" style="font-size:25px">Temeratura</h3>
+                <p class="card-text" style="font-size:25px; font-weight: bolder;"> {{rasadnik.temp}} °C </p>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                <h3 class="card-title" style="font-size:25px">Količina vode</h3>
+                <p class="card-text" style="font-size:25px; font-weight: bolder;"> {{rasadnik.h20}} litara </p>
+                </div>
+            </div>
+    </div>
+
+<table>
+    <tr *ngFor="let i of red" >
+        <td *ngFor="let j of kolona" class="kol">
+            
+            <div *ngFor="let sadnica of sadnice">
+                <div *ngIf="i == sadnica.w && j == sadnica.h" class="aktivna">
+                    
+                    <div *ngIf="sadnica.napredak!=='100'">
+                        <a routerLink="/preparati/{{name}}/{{sadnica.w}}/{{sadnica.h}}">
+                            <img src="../../../assets/slike/sadnica.png" width="50px" height="50px"
+                          (mouseover)="open(sadnica)">
+                          </a>
+                    </div>
+
+                    <div *ngIf="sadnica.napredak==='100' && sadnica.spremna==false">
+                        <a (click)="izvadi(sadnica.w, sadnica.h, sadnica.sadnica)">
+                            <img src="../../../assets/slike/zrela.png" width="50px" height="50px">
+                          </a>
+                    </div>
+                    <div *ngIf="sadnica.spremna==true">
+                            <img src="../../../assets/slike/izvadjena.png" width="120px" height="120px">
+                    </div>
+                </div>
+            </div>
+
+        <div *ngIf="prikaz(i,j)">
+            <a (click)="zasadiS(i,j)">
+                <img class="sadnja" src="../../../assets/slike/plus.png" width="50px" height="50px">
+            </a>
+        </div>
+       </td>
+    </tr>
+</table>
+
+
+    </div>
+</div>

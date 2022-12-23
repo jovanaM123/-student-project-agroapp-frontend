@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="sidebar">
+             <a routerLink="/dashb/{{name}}">Vrati se</a>
+      </div>
+      
+      <div class="content">
+          <h2> Dodajte preparat koji zelite </h2>
+
+          <table *ngIf="sadnice.length>0">
+            <thead>
+            <tr class="table100-head">
+                <th class="column1">
+                    Sifra
+                </th>
+                <th class="column2">
+                    Ime
+                </th>
+                <th class="column3">
+                    Proizvodjac
+                </th>
+                <th class="column4">
+                    Kolicina
+                </th>
+                <th class="column5">
+                    Odaberi
+                </th>
+
+            </tr>
+        </thead>
+            <tr *ngFor="let sadnica of sadnice">
+              <td class="column1">
+                    {{sadnica.codeOfProd}}      
+                </td>
+                    <td class="column2">
+                        {{ sadnica.name }}
+                    </td>
+                    <td class="column3">
+                        {{ sadnica.company }}
+                    </td>
+                    <td class="column4">
+                        {{ sadnica.amount }}
+                    </td>
+                    <td class="column5">
+                        <button class="btn btn-success" 
+                        (click)="zasadiSadnicu(sadnica.name, sadnica.codeOfProd, sadnica.amount)">
+                             ZASADI </button>
+                    </td>
+            </tr>
+        </table>
+        <div *ngIf="sadnice.length==0">
+            TRENUTNO NEMATE NITI JEDNU SADNICU U MAGACINU
+        </div>
+        </div>
+    
+    </div>
+

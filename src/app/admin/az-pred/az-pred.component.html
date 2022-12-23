@@ -1,0 +1,30 @@
+<table>
+    <thead>
+        PROMENA PODATAKA PREDUZEĆA
+    </thead>
+    <tr>
+        <td> <input type="text" placeholder="{{firm.name}}" [(ngModel)]="name"></td>
+    </tr>
+    <small> *ime </small>
+    <tr>
+        <td> <input type="text" placeholder="{{firm.username}}" [(ngModel)]="username">
+          </td>
+    </tr>   <small> *korisničko ime </small>
+    <tr>
+        <td> <input type="text" placeholder="{{firm.mail}}" [(ngModel)]="mail">
+            </td>
+    </tr><small> *mail </small> 
+    <tr>
+        <td> <input type="date" placeholder="{{firm.date}}" [(ngModel)]="date">
+             </td>
+    </tr><small> *datum osnivanja </small>
+    <tr>
+        <td> <input type="text" placeholder="{{firm.city}}" [(ngModel)]="city">
+             </td>
+    </tr><small> *mesto osnivanja </small>
+    <br/>
+      <tr>
+        <td> <button class="btn btn-success" (click)="promena()"> PROMENI </button> </td>
+    </tr>
+</table>
+

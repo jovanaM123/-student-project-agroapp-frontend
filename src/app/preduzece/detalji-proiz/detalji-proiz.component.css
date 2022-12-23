@@ -1,0 +1,22 @@
+.container{
+    margin: 50px auto;
+    width: 90%;
+    background-color: whitesmoke;
+    border-radius: 8px;
+    box-shadow: 10px 10px 5px #aaaaaa;
+    padding: 10px;
+    text-align: center;
+    color: gray;
+}
+
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .container{
+        margin: auto;
+        width: 90% !important;
+    }
+
+}
+
+

@@ -1,0 +1,68 @@
+<app-admin-meni></app-admin-meni>
+
+<div class="container">
+    <h3>Zahtevi za registraciju poljoprivrednika </h3>
+    
+    <table *ngIf="farmeri.length>0">
+        <thead>
+        <tr class="table100-head">
+            <th class="column1">
+                Odobri
+            </th>
+            <th class="column2">
+                Ime
+            </th>
+            <th class="column3">
+                Prezime
+            </th>
+            <th class="column4">
+                Korisnicko ime
+            </th>
+            <th class="column5">
+                Mail
+            </th>
+            <th class="column6">
+                Datum rodjenja
+            </th>
+            <th class="column7">
+                Mesto rodjenja
+            </th>
+            <th class="column8">
+                Telefon
+            </th>
+        </tr>
+    </thead>
+        <tr *ngFor="let farmer of farmeri">
+            <td class="column1"><a (click)='prihvati(farmer.username)'>
+                <img src="../../../assets/slike/da.png" style="width: 15px; height:15px;">
+            </a>
+                <a (click)='odbij(farmer.username)'>
+                    <img src="../../../assets/slike/ne.png" style="width: 15px; height:15px;">
+                </a></td>
+                <td class="column2">
+                    {{ farmer.name }}
+                </td>
+                <td class="column3">
+                    {{ farmer.lastname }}
+                </td>
+                <td class="column4">
+                    {{ farmer.username }}
+                </td>
+                <td class="column5">
+                    {{ farmer.mail }}
+                </td>
+                <td class="column6">
+                    {{ farmer.dateOfBirth }}
+                </td>
+                <td class="column7">
+                    {{ farmer.cityOfBirth }}
+                </td>
+                <td class="column8">
+                    {{ farmer.phone }}
+                </td>
+        </tr>
+    </table>
+    <div *ngIf="farmeri.length==0">
+        TRENUTNO NEMATE NITI JEDAN ZAHTEV
+    </div>
+    </div>

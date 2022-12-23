@@ -1,0 +1,18 @@
+.futer{
+    color: lightslategrey;
+    font-size: small;
+    text-align: center;
+    position: relative;
+    top: 38%;
+    bottom:0;
+    width:100%;
+    height:60px;  
+
+}
+
+@media only screen and (max-width: 768px) {
+ .futer{
+    margin-top: 20px;
+    top:5%;
+ }
+}

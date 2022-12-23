@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <div id="navbarSupportedContent">
+      <ul class="navbar-nav nav-fill w-100">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/adminPocetna"> Pocetna </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Zahtevi
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/zahtevPolj">Poljoprivrednici</a>
+            <a class="dropdown-item" routerLink="/zahtevPred">Preduzeca</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Nalozi
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/sviPolj">Poljoprivrednici</a>
+            <a class="dropdown-item" routerLink="/svaPred">Preduzeca</a>
+          </div>
+        </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Moj profil
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" routerLink="/promenaSifre">Promeni sifru</a>
+              <a class="dropdown-item" (click)="logout()">Odjavi se</a>
+            </div>
+          </li>
+      </ul>
+
+    </div>
+  </nav>

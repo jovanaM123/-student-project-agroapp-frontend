@@ -1,0 +1,42 @@
+
+.container{
+    margin: 50px auto;
+    width: 50%;
+    background-color: whitesmoke;
+    border-radius: 8px;
+    box-shadow: 10px 10px 5px #aaaaaa;
+    padding: 10px;
+    text-align: center;
+    color: gray;
+}
+h1{
+    margin-bottom: 20px;
+}
+
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .container{
+        margin: auto;
+        width: 90% !important;
+    }
+    
+
+    .container .row .col-sm-4 img {
+        width: 200px !important;
+        height: 200px !important;
+        display: block !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+.container .row .col-sm-4 {
+    display: inline-block;
+    margin-right: 0px;
+}
+.container .row .col-sm-4 img {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+}

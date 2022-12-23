@@ -1,0 +1,55 @@
+<app-admin-meni></app-admin-meni>
+<div class="container">
+    <h3>Zahtevi za registraciju preduzeca </h3>
+    
+    <table *ngIf="firme.length>0">
+        <thead>
+        <tr class="table100-head">
+            <th class="column1">
+                Odobri
+            </th>
+            <th class="column2">
+                Ime
+            </th>
+            <th class="column3">
+                Korisnicko ime
+            </th>
+            <th class="column4">
+                Mail
+            </th>
+            <th class="column5">
+                Datum 
+            </th>
+            <th class="column6">
+                Mesto 
+            </th>
+        </tr>
+    </thead>
+        <tr *ngFor="let firma of firme">
+            <td class="column1"><a (click)='prihvati(firma.username)'>
+                <img src="../../../assets/slike/da.png" style="width: 15px; height:15px;">
+            </a>
+                <a (click)='odbij(firma.username)'>
+                    <img src="../../../assets/slike/ne.png" style="width: 15px; height:15px;">
+                </a></td>
+                <td class="column2">
+                    {{ firma.name }}
+                </td>
+                <td class="column3">
+                    {{ firma.username }}
+                </td>
+                <td class="column4">
+                    {{ firma.mail }}
+                </td>
+                <td class="column5">
+                    {{ firma.date }}
+                </td>
+                <td class="column6">
+                    {{ firma.city }}
+                </td>
+        </tr>
+    </table> 
+    <div *ngIf="firme.length==0">
+        TRENUTNO NEMATE NITI JEDAN ZAHTEV
+    </div>
+    </div>
